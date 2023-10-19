@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>File Upload</title>
+</head>
+
+<body>
+    <h1>File Upload</h1>
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <input type="submit" value="Upload" />
+    </form>
+
+    {{if .ImageURL}}
+    <h2>Uploaded Image:</h2>
+    <img src="{{.ImageURL}}" alt="Uploaded Image">
+    {{end}}
+
+    {{if .TotalFaces}}
+    <h2>Total Faces Detected: {{.TotalFaces}}</h2>
+    {{end}}
+</body>
+
+</html>
